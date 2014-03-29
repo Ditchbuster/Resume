@@ -1,0 +1,111 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+\usepackage{newcent}   % uses new century schoolbook postscript font 
+\newsectionwidth{0pt}  % So the text is not indented under section headings
+\setlength{\textheight}{12in} % set text height big enough for box
+\topmargin=-.5in       % to start box .5in from top of page
+\oddsidemargin=-.6in   % to start box .5in from left of page
+    
+\begin{document}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following lines define \boxaround, used to draw a box on the page.
+% The parameter is the entire text of the resume. Must fit on one page!
+%
+% \boxaroundhmargin is the left & right margin around the text inside the box.
+% \boxaroundvmargin is the top & bottom margin around the text inside the box.
+% \boxrulethickness controls thickness of line used to draw the box.
+% You can change these 3 things in the lines below:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newdimen\boxrulethickness\newdimen\boxaroundhmargin\newdimen\boxaroundvmargin
+\boxrulethickness=.5pt        %controls thickness of line 
+\boxaroundhmargin=35pt        % about a half inch
+\boxaroundvmargin=35pt        % to fit more text on page, make this smaller
+%%%%%%%%%%%%%%%%%%%%%%%%% Don't read this stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hsize=7.5in% \vsize=10.5in             % use bigger dimensions for box
+\newbox\MACboxA  \newdimen\MACdimenA
+% \borderandboxit is used inside \boxaround:
+\def\borderandboxit#1#2#3{\vbox{\hrule height#2\hbox{\vrule width#2\hskip#1\hskip-#2%
+  \vbox{\vskip#1\relax#3\vskip#1}\hskip#1\hskip-#2\vrule width#2}\hrule height#2}}
+%
+\long\def\boxaround#1{\vskip6pt
+  {\MACdimenA=\hsize \advance\MACdimenA by-\boxaroundhmargin
+   \advance\MACdimenA by-\boxaroundhmargin   % once for each side
+   \setbox\MACboxA=\hbox to \hsize{\hskip\boxaroundhmargin%\hss
+                     \vbox{\hsize=\MACdimenA
+                           \vskip\boxaroundvmargin #1
+                           \vskip\boxaroundvmargin}\hss}%
+   \borderandboxit{0pt}\boxrulethickness{\box\MACboxA}}%
+  \vskip2pt plus0pt minus0pt
+}
+%%%%%%%%%%%%%%%%%%%  End of \boxaround macro %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\boxaround{ % put the text on the page inside a box  
+
+\name{\textsc{Ditchbuster}\\[12pt]}
+\address{\bf Mailing Address\\1123 Lunar Landing\\Moon, Earth SOI \\} 
+\address{\hspace*{\fill} \bf Contact Information\\\hspace*{\fill}*************@gmail.com\\\hspace*{\fill}555.543.2211}
+
+ 
+\begin{resume} 
+\section{\textsc{Education}} \vspace{.15cm}
+\begin{ncolumn}{2}
+{\it Bachelor of Science, Electrical Engineering}  &  May 2561 
+\end{ncolumn}\\
+University of Earth, USA, Earth
+\begin{itemize}
+\item Computer Organization, Data Structures \& Computer Operating Systems
+\item Computers as Components (microprocessor \& assembly language)
+\item Embedded System Design, Real-time Digital Media, Software Eng. of Concurrent Systems
+\end{itemize}
+\begin{ncolumn}{2}
+{\it High School Diploma, Graduated with Honors}  &   June 2553
+\end{ncolumn}\\
+East Crater High School, Moon, Earth SOI
+ 
+\section{\textsc{Work Experience}}\vspace{.15cm}
+\begin{ncolumn}{2}
+{\it Field Engineer} & 6/61-Present
+\end{ncolumn}\\  
+Life Support Services, West Crater, Moon\\
+Responsible for collecting data and analyzing field operations, invoicing services provided and acting as corporate liaison to the client in the field. Additionally responsible for performing laboratory tests and specialized projects ensuring life goes on.
+
+\begin{ncolumn}{2}
+{\it Electrical Engineering Intern}  &   5/59-6/61 
+\end{ncolumn}\\
+Moon Motion - Dexter Coordinated Management, Lower East Eye, Moon \\
+Assisted engineers in designing, prototyping, and testing of new products. Worked implementing new infrared guidance systems for Dexter's newest line of surface speeders. Hands on lab work. Wrote and performed test plans on intrinsic safety barriers insuring product compatibility.
+
+\begin{ncolumn}{2}
+{\it Lumber and Building Materials Associate} & 9/57-12/60
+\end{ncolumn}\\  
+Lunar Dome Depot, East Crater, Moon \\
+Provided excellent customer service while solving design problems. Routinely required out of the box thinking. Customers also required design or revisions to project ideas.
+
+\begin{ncolumn}{2} 
+{\it In House IT Tech} &  5/56-8/57 
+\end{ncolumn}\\
+Golden Moon Energy, NISS, Earth Low Orbit \\
+Analyzed the computing needs of Golden Moon Energy's satelite office,  responsible for all computer equipment purchases, and setup initial deployment of equipment. Provided in house IT support including: Setup and troubleshooting of an Exchange server; troubleshoot email, MS office and personal computer problems; design, code, and deploy the business website. Worked as a data tech which included working with databases and Excel's VBA to plot overlays in Google Earth.
+
+\begin{ncolumn}{2}
+{\it Construction Engineering Intern}  &   5/54-8/54 
+\end{ncolumn}\\
+Planetary Orbital Engineering, USA, Earth \\
+Assisted professional engineers in design of building electrical systems. Specified building and equipment power needs and ensured electrical systems would not exceed maximum rating. Heavy use of AutoCad. Ensured electrical systems were designed to government building codes. Included work on fire and lighting system design.
+
+\section{\textsc{Skills}}\vspace{.15cm}
+Computer Programming - Java, Android, C++ , C : Linux tinkerer\\
+HAM radio operator - ******
+
+\section{\textsc{Volunteering}}\vspace{.15cm}
+International Mars Mission Trips, 2553-2563\\
+Fostering rescue aliens, 2560-2563
+\end{resume}
+\vfill} %    end the material being boxed.
+\end{document}
+
+
